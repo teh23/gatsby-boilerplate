@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-filename-extension */
-import './src/styles/global.scss'
 import React from 'react'
 import { Provider } from 'react-redux'
 import store from './src/store'

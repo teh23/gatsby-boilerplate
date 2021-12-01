@@ -1,6 +1,6 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Header from '../src/features/Header'
+import Header from '..'
 
 describe('Header', () => {
   it('first', () => {
