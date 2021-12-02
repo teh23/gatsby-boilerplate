@@ -13,8 +13,29 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\"",
+    "prettier:check": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\" --list-different",
+    "prettier:save": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\" --write",
+    "prepare": "husky install",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "pre-push": "npm-run-all --parallel test prettier:check lint build",
+    "pre-commit": "lint-staged"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run pre-commit",
+      "pre-push": "npm run pre-push"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npm run test",
+      "npm run format",
+      "npm run lint"
+    ]
+},
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "gatsby": "^4.3.0",
@@ -55,8 +76,11 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.4",
     "prettier": "^2.5.0",
     "react-test-renderer": "^17.0.2",
