@@ -20,5 +20,24 @@ module.exports = {
       },
       __key: 'images',
     },
+    {
+      resolve: `@teh23/gatsby-source-api`,
+      options: {
+        url: 'https://jsonplaceholder.typicode.com/albums/1/photos',
+        baseType: 'albums',
+        images: ['url', 'thumbnailUrl'],
+        schema: `
+          type albums implements Node {
+            albumId: Int
+            id: Int
+            title: String
+            url: String
+            thumbnailUrl: String
+            urlLocal: File @link(by: "id", from: "urlLocal___NODE")
+            thumbnailUrlLocal: File @link(by: "id", from: "thumbnailUrlLocal___NODE")
+          }
+        `,
+      },
+    },
   ],
 }
