@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import headerReducer from './features/Header/headerReducer'
+// APPEND IMPORT
 
 const store = configureStore({
   reducer: {
     header: headerReducer,
+    // APPEND REDUCER
   },
 })
 
