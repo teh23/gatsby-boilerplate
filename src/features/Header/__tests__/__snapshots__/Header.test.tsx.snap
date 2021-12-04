@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header first 1`] = `
+<header
+  className="bg-gray-600"
+>
+  <div
+    className="container flex justify-between items-center mx-auto h-16"
+  >
+    <div
+      id="logo"
+    >
+      <p
+        className="font-bold text-lg"
+      >
+        asd
+      </p>
+    </div>
+    <div
+      id="menu"
+    >
+      <ul
+        className="flex space-x-4"
+      >
+        <li>
+          Main page
+        </li>
+        <li>
+          Products
+        </li>
+        <li>
+          Contact
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+`;
