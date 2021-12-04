@@ -13,6 +13,22 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        //resolveEnv: () => NODE_ENV, add from env
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }],
+          },
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
