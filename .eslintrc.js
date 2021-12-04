@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
-  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended'],
+  extends: ['airbnb', 'airbnb/hooks', 'plugin:prettier/recommended', 'plugin:import/typescript'],
+  plugins: ['jest'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module',
@@ -15,6 +16,7 @@ module.exports = {
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
+    'react/require-default-props': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-props-no-spreading': 'off',
@@ -25,6 +27,11 @@ module.exports = {
         ignorePropertyModificationsFor: ['state'],
       },
     ],
+    'jest/no-disabled-tests': 'warn',
+    'jest/no-focused-tests': 'error',
+    'jest/no-identical-title': 'error',
+    'jest/prefer-to-have-length': 'warn',
+    'jest/valid-expect': 'error',
   },
   overrides: [
     {
@@ -41,4 +48,7 @@ module.exports = {
       },
     },
   ],
+  env: {
+    'jest/globals': true,
+  },
 }

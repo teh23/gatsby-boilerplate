@@ -16,12 +16,13 @@
     "test": "jest",
     "test:commit": "jest --watchAll=false --findRelatedTests --bail",
     "test:watch": "jest --watchAll",
-    "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\"",
-    "prettier:check": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\" --list-different",
-    "prettier:save": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\" --write",
+    "format": "prettier --ignore-path .gitignore \"./**/*.+(js|jsx|json|ts|tsx)\"",
+    "format:check": "prettier --ignore-path .gitignore \"./**/*.+(js|jsx|json|ts|tsx)\" --list-different",
+    "format:save": "prettier --ignore-path .gitignore \"./**/*.+(js|jsx|json|ts|tsx)\" --write",
     "prepare": "husky install",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "pre-push": "npm-run-all --parallel test prettier:check lint build",
+    "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
+    "pre-push": "npm-run-all --parallel test format:check lint build",
     "pre-commit": "lint-staged"
   },
   "husky": {
@@ -32,11 +33,11 @@
   },
   "lint-staged": {
     "./src/**/*.{js,jsx,ts,tsx}": [
-      "npm run prettier:save",
-      "npm run lint",
+      "npm run format:save",
+      "npm run lint:fix",
       "npm run test:commit"
     ]
-},
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "gatsby": "^4.3.0",
@@ -73,6 +74,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
