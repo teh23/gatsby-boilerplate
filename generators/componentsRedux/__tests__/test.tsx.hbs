@@ -1,0 +1,11 @@
+import React from 'react'
+import { render } from '@testing-library/react'
+import {{pascalCase name}} from '..'
+import { ReduxWrapper } from '../../../wrap-with-provider'
+
+describe('{{pascalCase name}} components', () => {
+  it('render {{pascalCase name}} correctly', () => {
+    const { container } = render(<ReduxWrapper><{{pascalCase name}} /></ReduxWrapper>)
+    expect(container).toMatchSnapshot()
+  })
+})

@@ -1,0 +1,23 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { {{pascalCase name}}State } from '../../helpers/types'
+
+const initialState: {{pascalCase name}}State = {
+  initial: '',
+}
+
+const {{camelCase name}}Slice = createSlice({
+  name: '{{lowerCase name}}',
+  initialState,
+  reducers: {
+    addData: (state, action: PayloadAction<string>) => {
+      const { payload } = action
+      state.initial = payload
+    },
+  },
+})
+
+// Reducers
+export default {{camelCase name}}Slice.reducer
+
+// Actions
+const { addData } = {{camelCase name}}Slice.actions
