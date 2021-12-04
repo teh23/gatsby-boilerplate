@@ -1,12 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
+import wrapWithProvider from "./src/wrap-with-provider";
 
-import React from 'react'
-import { Provider } from 'react-redux'
-
-import store from './src/store'
-
-export const wrapRootElement = ({ element }) => {
-  return <Provider store={store}>{element}</Provider>
-}
+export const wrapRootElement = wrapWithProvider
