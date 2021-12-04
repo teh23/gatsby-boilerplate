@@ -2,11 +2,9 @@
   "name": "gatsby-boilerplate",
   "version": "1.0.0",
   "private": true,
-  "description": "gatsby-boilerplate",
+  "license": "MIT",
+  "description": "Simple starter template for gatsby to enhance your project start",
   "author": "Andrzej Franek",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
