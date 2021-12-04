@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppDispatch, useAppSelector } from '../../helpers/hooks/redux'
 
-const Header: React.FC<{
+const Header: React.FunctionComponent<{
   title: string
 }> = ({ title }): JSX.Element => {
   const menuList = useAppSelector((state) => state.header.menuList)
@@ -16,7 +16,7 @@ const Header: React.FC<{
         <div id="menu">
           <ul className="flex space-x-4">
             {menuList.map((item: string) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>

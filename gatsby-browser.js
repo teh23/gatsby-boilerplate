@@ -1,4 +1,4 @@
 import './src/styles/global.scss'
-import wrapWithProvider from "./src/wrap-with-provider";
+import wrapWithProvider from './src/wrap-with-provider'
 
 export const wrapRootElement = wrapWithProvider
