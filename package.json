@@ -14,6 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
+    "test:commit": "jest --watchAll=false --findRelatedTests --bail",
     "test:watch": "jest --watchAll",
     "prettier": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\"",
     "prettier:check": "prettier --ignore-path .gitignore \"src/**/*.+(js|jsx|json|ts|tsx)\" --list-different",
@@ -30,10 +31,10 @@
     }
   },
   "lint-staged": {
-    "./src/*.{js,jsx,ts,tsx}": [
-      "npm run test",
-      "npm run format",
-      "npm run lint"
+    "./src/**/*.{js,jsx,ts,tsx}": [
+      "npm run prettier:save",
+      "npm run lint",
+      "npm run test:commit"
     ]
 },
   "dependencies": {
