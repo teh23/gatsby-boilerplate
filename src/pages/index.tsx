@@ -1,12 +1,13 @@
 import * as React from 'react'
-import Header from '../features/Header'
+import Layout from '../components/Layout'
 
 // markup
 const IndexPage = () => (
-  <main>
-    <Header title="Tests are cool!" />
-    Hello, <span className="font-bold">World!</span>
-  </main>
+  <Layout title="Main page" description="Description main page">
+    <main>
+      Hello, <span className="font-bold">World!</span>
+    </main>
+  </Layout>
 )
 
 export default IndexPage
