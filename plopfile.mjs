@@ -32,7 +32,7 @@ export default function (plop) {
     },
       {
         type: 'add',
-        path: 'src/components/{{pascalCase name}}/{{camelCase name}}Reducer.tsx',
+        path: 'src/components/{{pascalCase name}}/{{lowerCase name}}Reducer.tsx',
         templateFile: 'generators/componentsRedux/reducer.tsx.hbs'
       },
       {
@@ -50,14 +50,14 @@ export default function (plop) {
         path: 'src/store.ts',
         pattern: /(\/\/ APPEND IMPORT)/g,
         template:
-          'import {{camelCase name}}Reducer from \'./components/{{pascalCase name}}/{{camelCase name}}Reducer\'\n$1',
+          'import {{lowerCase name}}Reducer from \'./components/{{pascalCase name}}/{{lowerCase name}}Reducer\'\n$1',
         type: 'modify',
       },
       {
         path: 'src/store.ts',
         pattern: /(\/\/ APPEND REDUCER)/g,
         template:
-          '\t\t{{camelCase name}}: {{camelCase name}}Reducer,\n$1',
+          '\t\t{{lowerCase name}}: {{lowerCase name}}Reducer,\n$1',
         type: 'modify',
       },
     ]
@@ -97,7 +97,7 @@ export default function (plop) {
     },
       {
         type: 'add',
-        path: 'src/features/{{pascalCase name}}/{{camelCase name}}Reducer.tsx',
+        path: 'src/features/{{pascalCase name}}/{{lowerCase name}}Reducer.tsx',
         templateFile: 'generators/componentsRedux/reducer.tsx.hbs'
       },
       {
@@ -115,14 +115,14 @@ export default function (plop) {
         path: 'src/store.ts',
         pattern: /(\/\/ APPEND IMPORT)/g,
         template:
-          'import {{camelCase name}}Reducer from \'./features/{{pascalCase name}}/{{camelCase name}}Reducer\'\n$1',
+          'import {{lowerCase name}}Reducer from \'./features/{{pascalCase name}}/{{lowerCase name}}Reducer\'\n$1',
         type: 'modify',
       },
       {
         path: 'src/store.ts',
         pattern: /(\/\/ APPEND REDUCER)/g,
         template:
-          '\t\t{{camelCase name}}: {{camelCase name}}Reducer,\n$1',
+          '\t\t{{lowerCase name}}: {{lowerCase name}}Reducer,\n$1',
         type: 'modify',
       },
     ]
