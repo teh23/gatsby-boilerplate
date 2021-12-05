@@ -52,7 +52,7 @@ Your site is now running at http://localhost:8000
 
 ## Explanations
 1. **Additonal scripts**  
-```json
+```javascript
 "scripts": {
   "develop": "gatsby develop",
   "start": "gatsby develop",
@@ -95,9 +95,11 @@ After running `npm run plop` u will see this:
 
 As you can see, we can generate 5 templates. The differences between a component and a feature are generally name, and where the files are placed. For example, 
 creating a component with the name Button generates the following tree structure:
+
 ![Structure](https://i.imgur.com/VaDV5em.png)
 
 And files look like:
+
 ![Files](https://i.imgur.com/bIW2aVw.png)
 
 Redux components generating following structure: 
