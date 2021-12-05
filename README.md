@@ -1,7 +1,7 @@
 
 
 # 🚀 Gatsby boilerplate
-[![Build Status](https://travis-ci.org/apollographql/eslint-plugin-graphql.svg?branch=master)](https://travis-ci.org/apollographql/eslint-plugin-graphql)
+[![Build Status](https://app.travis-ci.com/teh23/gatsby-boilerplate.svg?branch=master&status=passed)](https://app.travis-ci.com/github/teh23/gatsby-boilerplate)
 
 Simple starter template for gatsby to enhance your project start
 
